@@ -66,4 +66,9 @@ abstract class DatabaseRequest {
       'FOREIGN KEY("id_user") REFERENCES "User"("id") ON DELETE CASCADE,'
       'FOREIGN KEY("id_bicycle") REFERENCES "Bicycle"("id") ON DELETE CASCADE,'
       'PRIMARY KEY("id" AUTOINCREMENT) );';
+
+  static String select(String table) => 'Select * from $table';
+
+  static String selectName(String table, List<String> test) =>
+      'Select ${test.toString().replaceAll('[', '').replaceAll(']', '')} from $table';
 }
